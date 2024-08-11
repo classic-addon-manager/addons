@@ -27,11 +27,15 @@ jobs:
     - name: Build addons.json
       run: python build_addons.py
 
+    - name: Get the short commit SHA
+      id: get_commit_sha
+      run: echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
     - name: Create a release
       id: create_release
       uses: actions/create-release@v1
       with:
-        tag_name: ""
+        tag_name: "release-${{ env.sha }}"
         release_name: 'Latest addons'
         body: 'Please contact Sami with any issues'
         draft: false
