@@ -1,0 +1,5 @@
+name: example-plugin
+description: A plugin that simply acts as a way to learn the addon system
+author: Aguru
+repo: classic-addon-manager/example-plugin
+tags: ['PvP', 'Example']
