@@ -24,6 +24,10 @@ Commit your changes to your forked repository and open a pull request to this re
 
 A member will review your pull request and approve it after inspecting the addon. Once accepted a new addon manifest is generated and users of the Classic Addon Manager will see your addon.
 
+##### Addon file structure
+The best way to get familiar with the addon file structure is to look at the example [located here](https://github.com/classic-addon-manager/example-plugin).
+It is expected to be a flat structure with your entrypoint in the root directory of the repository.
+
 ##### Naming conventions
 Ensure that your addon's YAML file matches the name as best it can, for example if the addon's name is `example-plugin`, the YAML file should be called `example-plugin.yaml`.
 
