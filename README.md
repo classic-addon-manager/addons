@@ -17,7 +17,7 @@ As a player on ArcheAge Classic you do not need to interact with this repository
 
 Start by forking this repository and cloning it to your machine.
 
-Once done add a YAML file with your plugin name (see [naming conventions](#naming-conventions) below),
+Once done add a YAML file with your addon name (see [naming conventions](#naming-conventions) below),
 fill out the fields "name, description, author, repo, tags" (see [explanation of declaration](#addon-declaration-explanation) below).
 
 Commit your changes to your forked repository and open a pull request to this repository, [you can learn more about pull requests here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
@@ -57,3 +57,10 @@ Classic Addon Manager uses github releases to push updates to users.
 When you are ready to push and update simply go to github and create a release, once done users will be notified of your update in the addon manager.
 
 [You can learn more about github releases here](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
+
+In simple steps:
+
+1. Create a tag for the version you are happy with. We suggest using `1.0.0` for your first version. You can do this with two commands: `git tag 1.0.0` to create the tag and `git push --tags` to push the tag to github.
+2. Go to your github addon repository and click the link `Create a new release`.
+3. Fill out your release information and press `Publish release`
+4. Sit back and relax as the addon manager propagates the changes to the players.
