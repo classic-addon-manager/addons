@@ -16,9 +16,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Download script from gist
-      run: curl -o build_addons.py https://gist.githubusercontent.com/ProjectInfinity/9730b5080ff0326488e5cffbac263d27/raw/e72d22b88d72de5269debc0c31a41658b6a0463b/build_addons.py
-
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
