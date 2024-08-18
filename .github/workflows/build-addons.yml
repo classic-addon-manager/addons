@@ -28,7 +28,7 @@ jobs:
       run: pip install pyyaml
 
     - name: Build addons.json
-      run: python build_addons.py
+      run: python .github/build_addons.py
 
     - name: Get the short commit SHA
       id: get_commit_sha
