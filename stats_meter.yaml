@@ -2,4 +2,5 @@ name: stats_meter
 description: A stats meter covering damage, healing, DPS, HPS, etc.
 author: Notuli
 repo: michaelqtz/aac-addon-stats_meter
+branch: main
 tags: ['PvE', 'PvP', 'Utility']

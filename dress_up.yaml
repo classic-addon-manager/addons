@@ -2,4 +2,5 @@ name: dress_up
 description: Preview the visual appearance of equipment.
 author: Notuli
 repo: michaelqtz/aac-addon-dress_up
+branch: main
 tags: ['Utility']

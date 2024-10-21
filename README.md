@@ -34,13 +34,14 @@ Ensure that your addon's YAML file matches the name as best it can, for example 
 > If your in-game addon uses spaces for its name then your `name` field and addon_name.yaml file MUST use underscores `_` rather than space.
 
 #### Addon declaration explanation
-A addon declaration (plugin.yaml) file consists of 5 fields.
+A addon declaration (plugin.yaml) file consists of 6 fields.
 
 1. name
 2. description
 3. author
 4. repo
-5. tags
+5. branch
+6. tags
 
 `name` is the field that declares the name of the addon and is what will be put in your addons.txt file as well as your Addon directory. This field should ideally match the filename.
 
@@ -49,6 +50,8 @@ A addon declaration (plugin.yaml) file consists of 5 fields.
 `author` is your name, the author. It is just used to display who made the addon and should ideally match the in-game author of your addon.
 
 `repo` is the github username and repository combination of your addon. The example plugin's repo value is `classic-addon-manager/example-addon`. Yours is likely going to be `your-github-username/your-addon-name`.
+
+`branch` is the github branch that is considered the main branch of your repository. By default this is 'main' unless you opted for a different name while creating your repository.
 
 `tags` is a string array determining ways to indicate what your addon is about to the end user as well as being possible to filter on. Ensure you surround your tags with single quotes `'`
 
