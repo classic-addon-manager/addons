@@ -1,0 +1,6 @@
+name: raidstats
+description: Shows effective stats of raid members (crit rate / bonus included)
+author: Delarme
+repo: Draygo-aac/aac-raidstats
+branch: main
+tags: ['Utility']
