@@ -15,4 +15,4 @@ for filename in os.listdir(directory):
 combined_data.sort(key=lambda x: x.get('name', ''))
 
 with open(output_file, 'w') as outfile:
-    json.dump(combined_data, outfile, indent=4)
+    json.dump(combined_data, outfile)
