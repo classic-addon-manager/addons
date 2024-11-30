@@ -1,6 +1,7 @@
 name: reality_check
+alias: Reality Check
 description: Time-related utilities for labor and in-game time.
 author: Notuli
 repo: michaelqtz/aac-addon-reality_check
 branch: main
-tags: ['Utility']
+tags: ["Utility"]

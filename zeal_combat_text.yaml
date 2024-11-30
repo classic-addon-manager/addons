@@ -1,6 +1,7 @@
 name: zeal_combat_text
+alias: Zeal Combat Text
 description: Make damage purple and heals pink when zeal'd
 author: Notuli
 repo: michaelqtz/aac-addon-zeal_combat_text
 branch: main
-tags: ['Utility']
+tags: ["Utility"]

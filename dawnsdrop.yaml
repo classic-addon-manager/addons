@@ -1,6 +1,7 @@
 name: dawnsdrop
+alias: dawnsdrop
 description: Checks if you have tracked items equipped
 author: Delarme
 repo: Draygo-aac/aac-dawnsdrop
 branch: main
-tags: ['Utility']
+tags: ["Utility"]

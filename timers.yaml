@@ -1,6 +1,7 @@
 name: timers
+alias: timers
 description: Simple stopwatch addon for Archeage
 author: Delarme
 repo: Draygo-aac/aac-timers
 branch: main
-tags: ['Utility']
+tags: ["Utility"]

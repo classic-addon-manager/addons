@@ -1,6 +1,7 @@
 name: sticky_ui
+alias: Sticky UI
 description: Sticks UI elements in place with elmer's glue.
 author: Notuli
 repo: michaelqtz/aac-addon-sticky_ui
 branch: main
-tags: ['Utility']
+tags: ["Utility"]

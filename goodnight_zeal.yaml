@@ -1,6 +1,7 @@
 name: goodnight_zeal
+alias: Goodnight Zeal
 description: A screensaver using the zeal icon
 author: Fmpwire
 repo: fmpwire/goodnight_zeal
 branch: main
-tags: ['PvP', 'Example']
+tags: ["PvP", "Example"]

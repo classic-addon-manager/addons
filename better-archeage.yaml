@@ -1,6 +1,7 @@
 name: better-archeage
+alias: Better ArcheAge
 description: An addon adding several improvements to the game. Includes a range finder, speedometer, buff tracker and more.
 author: Aguru
 repo: classic-addon-manager/demo-addon
 branch: master
-tags: ['Utility', 'QoL']
+tags: ["Utility", "QoL"]

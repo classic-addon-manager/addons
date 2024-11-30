@@ -30,20 +30,23 @@ It is expected to be a flat structure with your entrypoint in the root directory
 
 #### Naming conventions
 Ensure that your addon's YAML file matches the name as best it can, for example if the addon's name is `example-plugin`, the YAML file should be called `example-plugin.yaml`.
-> [!WARNING]  
+> [!WARNING]
 > If your in-game addon uses spaces for its name then your `name` field and addon_name.yaml file MUST use underscores `_` rather than space.
 
 #### Addon declaration explanation
 A addon declaration (plugin.yaml) file consists of 6 fields.
 
 1. name
-2. description
-3. author
-4. repo
-5. branch
-6. tags
+2. alias
+3. description
+4. author
+5. repo
+6. branch
+7. tags
 
-`name` is the field that declares the name of the addon and is what will be put in your addons.txt file as well as your Addon directory. This field should ideally match the filename.
+`name` is the field that declares the name of the addon and is what will be put in your addons.txt file as well as your Addon directory. This field should match the filename.
+
+`alias` is the field that allows you to declare a "friendly" name for your addon. This field is what will be displayed in the addon manager and should be representative of your addon's name.
 
 `description` is a short description that allows you to describe what your addon does to the user. This text is displayed in the addon manager when browsing and should ideally match the in-game description of your addon.
 

@@ -1,6 +1,7 @@
 name: flappy_zeal
+alias: Flappy Zeal
 description: Flappy bird but with zeal
 author: Fmpwire
 repo: fmpwire/flappy_zeal
 branch: main
-tags: ['Example']
+tags: ["Example"]
