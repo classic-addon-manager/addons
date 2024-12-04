@@ -1,5 +1,5 @@
 name: raidstats
-alias: raidstats
+alias: Raid Stats
 description: Shows effective stats of raid members (crit rate / bonus included)
 author: Delarme
 repo: Draygo-aac/aac-raidstats
