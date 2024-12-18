@@ -1,0 +1,7 @@
+name: classic_calculator
+alias: Classic Calculator
+description: A simple Calculator.
+author: Mogray
+repo: Mograye/ClassicCalculator
+branch: main
+tags: ["Utility", "QoL"]
