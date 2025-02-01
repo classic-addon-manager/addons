@@ -34,7 +34,7 @@ Ensure that your addon's YAML file matches the name as best it can, for example 
 > If your in-game addon uses spaces for its name then your `name` field and addon_name.yaml file MUST use underscores `_` rather than space.
 
 #### Addon declaration explanation
-A addon declaration (plugin.yaml) file must consist of 7 fields, there are .
+A addon declaration (plugin.yaml) file must consist of 7 fields, there are also optional fields you may fill out.
 
 1. name (required)
 2. alias (required)
