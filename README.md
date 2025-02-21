@@ -34,15 +34,16 @@ Ensure that your addon's YAML file matches the name as best it can, for example 
 > If your in-game addon uses spaces for its name then your `name` field and addon_name.yaml file MUST use underscores `_` rather than space.
 
 #### Addon declaration explanation
-A addon declaration (plugin.yaml) file consists of 6 fields.
+A addon declaration (plugin.yaml) file must consist of 7 fields, there are also optional fields you may fill out.
 
-1. name
-2. alias
-3. description
-4. author
-5. repo
-6. branch
-7. tags
+1. name (required)
+2. alias (required)
+3. description (required)
+4. author (required)
+5. repo (required)
+6. branch (required)
+7. tags (required)
+8. kofi (optional)
 
 `name` is the field that declares the name of the addon and is what will be put in your addons.txt file as well as your Addon directory. This field should match the filename.
 
@@ -57,6 +58,8 @@ A addon declaration (plugin.yaml) file consists of 6 fields.
 `branch` is the github branch that is considered the main branch of your repository. By default this is 'main' unless you opted for a different name while creating your repository.
 
 `tags` is a string array determining ways to indicate what your addon is about to the end user as well as being possible to filter on. Ensure you surround your tags with single quotes `'`
+
+`kofi` is your username on [ko-fi.com](https://ko-fi.com), ko-fi is a service that allows users to support you monetarily as a creator. If you add a ko-fi username your addon will show a "support author" section.
 
 ### How to push updates to users
 Classic Addon Manager uses github releases to push updates to users.

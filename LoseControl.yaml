@@ -1,0 +1,7 @@
+name: LoseControl
+alias: Lose Control
+description: Tracks CC debuffs on you.
+author: Misosoup
+repo: IvanLeviathan/LoseControl
+branch: master
+tags: ["PvE", "PvP"]
