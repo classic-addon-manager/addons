@@ -60,6 +60,12 @@ A addon declaration (plugin.yaml) file must consist of 7 fields, there are also 
 `dependencies` is the field that allows you to declare which addons should be installed alongside with your addon if needed to operate. This allows you to publish addons as libraries for other addons to use.
 If you are publishing a library please use the wording "lib" somewhere in its name to denote that it is a library and not a standalone addon.
 
+Dependencies are a YAML array of strings representing the addon name that you depend on.
+Example: 
+```YAML
+dependencies: ['example-plugin']
+```
+
 `description` is a short description that allows you to describe what your addon does to the user. This text is displayed in the addon manager when browsing and should ideally match the in-game description of your addon.
 
 `author` is your name, the author. It is just used to display who made the addon and should ideally match the in-game author of your addon.
