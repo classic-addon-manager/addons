@@ -13,7 +13,14 @@
 This repository contains addon declarations used by Classic Addon Manager to catalogue and install addons.
 As a player on ArcheAge Classic you do not need to interact with this repository in any way, the Classic Addon Manager is all you need.
 
+### Addon descriptions
+---
+Classic Addon Manager will replace your addon's YAML description field when viewed in the browser if you push a file named `README.md` to the root directory of your addon's repository.
+
+It supports most markdown elements and should faithfully recreate your README when viewed.
+
 ### How to publish your addon
+---
 
 Start by forking this repository and cloning it to your machine.
 
@@ -38,16 +45,20 @@ A addon declaration (plugin.yaml) file must consist of 7 fields, there are also 
 
 1. name (required)
 2. alias (required)
-3. description (required)
-4. author (required)
-5. repo (required)
-6. branch (required)
-7. tags (required)
-8. kofi (optional)
+3. dependencies (optional)
+4. description (required)
+5. author (required)
+6. repo (required)
+7. branch (required)
+8. tags (required)
+9. kofi (optional)
 
 `name` is the field that declares the name of the addon and is what will be put in your addons.txt file as well as your Addon directory. This field should match the filename.
 
 `alias` is the field that allows you to declare a "friendly" name for your addon. This field is what will be displayed in the addon manager and should be representative of your addon's name.
+
+`dependencies` is the field that allows you to declare which addons should be installed alongside with your addon if needed to operate. This allows you to publish addons as libraries for other addons to use.
+If you are publishing a library please use the wording "lib" somewhere in its name to denote that it is a library and not a standalone addon.
 
 `description` is a short description that allows you to describe what your addon does to the user. This text is displayed in the addon manager when browsing and should ideally match the in-game description of your addon.
 
@@ -74,7 +85,4 @@ In simple steps:
 3. Fill out your release information and press `Publish release`
 4. Sit back and relax as the addon manager propagates the changes to the players.
 
-### Addon descriptions
-Classic Addon Manager will replace your addon's YAML description field when viewed in the browser if you push a file named `README.md` to the root directory of your addon's repository.
 
-It supports most markdown elements and should faithfully recreate your README when viewed.
