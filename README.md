@@ -73,3 +73,8 @@ In simple steps:
 2. Go to your github addon repository and click the link `Create a new release`.
 3. Fill out your release information and press `Publish release`
 4. Sit back and relax as the addon manager propagates the changes to the players.
+
+### Addon descriptions
+Classic Addon Manager will replace your addon's YAML description field when viewed in the browser if you push a file named `README.md` to the root directory of your addon's repository.
+
+It supports most markdown elements and should faithfully recreate your README when viewed.
