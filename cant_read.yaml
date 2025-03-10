@@ -1,0 +1,7 @@
+name: cant_read
+alias: Cant Read
+description: Automatic chat translation to language of choice.
+author: Notuli
+repo: michaelqtz/aac-addon-cant_read
+branch: main
+tags: ["Utility"]
