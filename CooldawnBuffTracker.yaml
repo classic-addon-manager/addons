@@ -1,0 +1,7 @@
+name: CooldawnBuffTracker
+alias: Cooldawn Buff Tracker
+description: An addon for tracking buffs and cooldowns.
+author: Adfazer & Claude
+repo: Adfazer/CooldawnBuffTracker
+branch: master
+tags: ["PvP", "PvE"]
