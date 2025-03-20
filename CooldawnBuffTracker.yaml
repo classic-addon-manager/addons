@@ -1,5 +1,6 @@
 name: CooldawnBuffTracker
 alias: Cooldawn Buff Tracker
+dependencies: ['addonlibrary']
 description: An addon for tracking buffs and cooldowns.
 author: Adfazer & Claude
 repo: Adfazer/CooldawnBuffTracker
