@@ -1,0 +1,8 @@
+name: TrackThatPlease
+alias: TrackThatPlease
+description: Tracks buffs/debuffs on target, with UI.
+author: Dehling
+repo: DelmonDev/TrackThatPlease
+branch: main
+kofi: delmon
+tags: ["Utility"]
