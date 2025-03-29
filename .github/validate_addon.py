@@ -24,19 +24,34 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             errors.append(f"Field '{field}' must be a string, not a boolean")
     
     # Name validation (no spaces)
-    if 'name' in addon and isinstance(addon['name'], str) and ' ' in addon['name']:
-        errors.append(f"Name field '{addon['name']}' contains spaces")
+    if 'name' in addon and addon['name'] is not None:
+        if isinstance(addon['name'], bool):
+            # Already captured above, skip to avoid duplicate errors
+            pass
+        elif not isinstance(addon['name'], str):
+            errors.append(f"Name field must be a string, got {type(addon['name']).__name__}")
+        elif ' ' in addon['name']:
+            errors.append(f"Name field '{addon['name']}' contains spaces")
     
     # Repo format validation (username/reponame)
-    if 'repo' in addon and isinstance(addon['repo'], str) and addon['repo']:
-        repo_pattern = re.compile(r'^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$')
-        if not repo_pattern.match(addon['repo']):
-            errors.append(f"Repo field '{addon['repo']}' must be in format 'username/reponame'")
+    if 'repo' in addon and addon['repo'] is not None:
+        if isinstance(addon['repo'], bool):
+            # Already captured above, skip to avoid duplicate errors
+            pass
+        elif not isinstance(addon['repo'], str):
+            errors.append(f"Repo field must be a string, got {type(addon['repo']).__name__}")
+        elif addon['repo']: # Only validate non-empty strings
+            repo_pattern = re.compile(r'^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$')
+            if not repo_pattern.match(addon['repo']):
+                errors.append(f"Repo field '{addon['repo']}' must be in format 'username/reponame'")
     
     # Tags/categories validation (max 4)
     if 'tags' in addon:
         if not isinstance(addon['tags'], list):
-            errors.append("Tags field must be a list")
+            if isinstance(addon['tags'], bool):
+                errors.append("Tags field must be a list, not a boolean")
+            else:
+                errors.append(f"Tags field must be a list, got {type(addon['tags']).__name__}")
         elif len(addon['tags']) > 4:
             errors.append(f"Too many categories/tags: {len(addon['tags'])} (maximum is 4)")
         elif not addon['tags']:  # Check if tags list is empty
@@ -45,7 +60,7 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             # Validate each tag is a string
             for i, tag in enumerate(addon['tags']):
                 if not isinstance(tag, str):
-                    errors.append(f"Tag at position {i+1} must be a string")
+                    errors.append(f"Tag at position {i+1} must be a string, got {type(tag).__name__}")
     
     # Validate that no unknown fields are present
     all_valid_fields = required_fields + optional_fields
@@ -72,20 +87,28 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
             # Try parsing YAML
             try:
                 addon_data = yaml.safe_load(content)
+                if addon_data is None:
+                    all_errors.append(f"Empty YAML file: {file_path}")
+                    continue
                 if not isinstance(addon_data, dict):
-                    all_errors.append(f"Invalid YAML structure: expected a dictionary/object, got {type(addon_data).__name__}")
+                    all_errors.append(f"Invalid YAML structure in {file_path}: expected a dictionary/object, got {type(addon_data).__name__}")
                     continue
             except yaml.YAMLError as e:
-                all_errors.append(f"Invalid YAML syntax: {str(e)}")
+                all_errors.append(f"Invalid YAML syntax in {file_path}: {str(e)}")
                 continue
             
             # Validate the addon entry
-            errors = validate_addon(addon_data)
-            if errors:
-                all_errors.extend(errors)
+            try:
+                errors = validate_addon(addon_data)
+                if errors:
+                    # Prefix errors with file name for clarity
+                    prefixed_errors = [f"[{file_path}] {error}" for error in errors]
+                    all_errors.extend(prefixed_errors)
+            except Exception as e:
+                all_errors.append(f"Error validating {file_path}: {str(e)}")
                     
         except Exception as e:
-            all_errors.append(f"Error processing file: {str(e)}")
+            all_errors.append(f"Error reading or processing file {file_path}: {str(e)}")
     
     return all_errors
 
