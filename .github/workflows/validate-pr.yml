@@ -34,7 +34,7 @@ jobs:
     - name: Validate changes
       id: validate
       run: |
-        python .github/validate_addon.py ${{ steps.changed-files.outputs.files }}
+        python .github/validate_addon.py ${{ steps.changed-files.outputs.files }} 2>&1 | tee output.txt
 
     - name: Comment on PR
       if: failure()
@@ -43,12 +43,19 @@ jobs:
         script: |
           const fs = require('fs');
           
-          // Get the error output from the previous step
-          const errorOutput = process.env.GITHUB_STEP_SUMMARY || '';
+          // Read the output file
+          const output = fs.readFileSync('output.txt', 'utf8');
+          
+          // Extract just the error messages
+          const errors = output
+            .split('\n')
+            .filter(line => line.includes('::error::'))
+            .map(line => line.replace(/^.*::error::/g, '').trim())
+            .filter(line => line && !line.includes('The following issues were found'));
           
           let comment = '### ❌ Validation Failed\n\n';
           comment += 'The following issues were found in your addon submission:\n\n';
-          comment += errorOutput.replace(/::error::/g, '- ');
+          comment += errors.map(error => `- ${error}`).join('\n');
           comment += '\n\nPlease fix these issues and update your pull request.';
           
           await github.rest.issues.createComment({
