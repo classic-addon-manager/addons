@@ -41,7 +41,7 @@ jobs:
         fi
 
     - name: Comment on PR
-      if: failure()
+      if: steps.validate.outputs.validation_failed == 'true'
       uses: actions/github-script@v6
       with:
         script: |
