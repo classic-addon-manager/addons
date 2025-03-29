@@ -86,6 +86,10 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
                 
             # Try parsing YAML
             try:
+                # Force string interpretation for certain fields
+                def string_constructor(loader, node):
+                    return str(loader.construct_scalar(node))
+                yaml.add_constructor('tag:yaml.org,2002:str', string_constructor)
                 addon_data = yaml.safe_load(content)
                 if addon_data is None:
                     all_errors.append(f"Empty YAML file: {file_path}")
@@ -94,6 +98,7 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
                     all_errors.append(f"Invalid YAML structure in {file_path}: expected a dictionary/object, got {type(addon_data).__name__}")
                     continue
             except yaml.YAMLError as e:
+                print(f"Raw YAML error: {str(e)}")
                 all_errors.append(f"Invalid YAML syntax in {file_path}: {str(e)}")
                 continue
             
