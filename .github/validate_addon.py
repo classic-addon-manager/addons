@@ -66,17 +66,17 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
             try:
                 addon_data = yaml.safe_load(content)
             except yaml.YAMLError as e:
-                all_errors.append(f"Invalid YAML in {file_path}: {str(e)}")
+                all_errors.append(f"Invalid YAML syntax: {str(e)}")
                 continue
             
             # Validate the addon entry
             if isinstance(addon_data, dict):
                 errors = validate_addon(addon_data)
                 if errors:
-                    all_errors.extend([f"{file_path}: {error}" for error in errors])
+                    all_errors.extend(errors)
                     
         except Exception as e:
-            all_errors.append(f"Error processing {file_path}: {str(e)}")
+            all_errors.append(f"Error processing file: {str(e)}")
     
     return all_errors
 
@@ -89,7 +89,7 @@ def main():
     
     # Output results in GitHub Actions format
     if errors:
-        print("::error::Validation errors found:")
+        print("::error::The following issues were found in your addon submission:")
         for error in errors:
             print(f"::error::{error}")
         sys.exit(1)
