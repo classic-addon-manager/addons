@@ -81,6 +81,10 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
             continue
             
         try:
+            # Get filename without extension and directory path
+            filename = file_path.split('/')[-1]
+            filename_without_ext = filename.rsplit('.', 1)[0]
+
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
                 
@@ -109,6 +113,12 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
                 if not isinstance(addon_data, dict):
                     all_errors.append(f"Invalid YAML structure in {file_path}: expected a dictionary/object, got {type(addon_data).__name__}")
                     continue
+
+                # Check if filename matches the name field
+                if 'name' in addon_data and addon_data['name'] is not None:
+                    if filename_without_ext != addon_data['name']:
+                        all_errors.append(f"[{file_path}] Filename '{filename_without_ext}' must match the 'name' field '{addon_data['name']}'")
+
             except yaml.YAMLError as e:
                 print(f"Raw YAML error: {str(e)}")
                 all_errors.append(f"Invalid YAML syntax in {file_path}: {str(e)}")
