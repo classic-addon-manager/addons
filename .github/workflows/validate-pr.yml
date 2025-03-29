@@ -36,12 +36,13 @@ jobs:
       run: |
         # Run validation and capture output even if it fails
         if ! python .github/validate_addon.py ${{ steps.changed-files.outputs.files }} 2>&1 | tee output.txt; then
-          echo "validation_failed=true" >> $GITHUB_OUTPUT
+          echo "validation_failed=true" >> "$GITHUB_OUTPUT"
+          cat output.txt
           exit 1
         fi
 
     - name: Comment on PR
-      if: steps.validate.outputs.validation_failed == 'true'
+      if: failure() && steps.validate.outcome == 'failure'
       uses: actions/github-script@v6
       with:
         script: |
