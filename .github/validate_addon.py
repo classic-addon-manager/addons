@@ -86,11 +86,23 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
                 
             # Try parsing YAML
             try:
-                # Force string interpretation for certain fields
+                print(f"Processing file: {file_path}")
+                # Force string interpretation for scalar values
                 def string_constructor(loader, node):
-                    return str(loader.construct_scalar(node))
+                    if isinstance(node, yaml.ScalarNode):
+                        value = loader.construct_scalar(node)
+                        return str(value)
+                    return loader.construct_scalar(node)
+                def sequence_constructor(loader, node):
+                    result = loader.construct_sequence(node)
+                    return [str(item) if not isinstance(item, (list, dict)) else item for item in result]
+                # Add our custom constructors
                 yaml.add_constructor('tag:yaml.org,2002:str', string_constructor)
+                yaml.add_constructor('tag:yaml.org,2002:seq', sequence_constructor)
+                # Print raw content for debugging
+                print(f"Raw content:\n{content}")
                 addon_data = yaml.safe_load(content)
+                print(f"Parsed data: {addon_data}")
                 if addon_data is None:
                     all_errors.append(f"Empty YAML file: {file_path}")
                     continue

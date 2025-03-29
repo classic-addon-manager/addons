@@ -35,6 +35,8 @@ jobs:
     - name: Validate changes
       id: validate
       run: |
+        # Show the files we're validating
+        echo "Files to validate: ${{ steps.changed-files.outputs.files }}"
         # Run validation and capture output
         python .github/validate_addon.py ${{ steps.changed-files.outputs.files }} 2>&1 | tee output.txt
         # Check if there were validation errors in the output
