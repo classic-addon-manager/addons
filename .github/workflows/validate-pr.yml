@@ -34,7 +34,11 @@ jobs:
     - name: Validate changes
       id: validate
       run: |
-        python .github/validate_addon.py ${{ steps.changed-files.outputs.files }} 2>&1 | tee output.txt
+        # Run validation and capture output even if it fails
+        if ! python .github/validate_addon.py ${{ steps.changed-files.outputs.files }} 2>&1 | tee output.txt; then
+          echo "validation_failed=true" >> $GITHUB_OUTPUT
+          exit 1
+        fi
 
     - name: Comment on PR
       if: failure()
@@ -63,4 +67,4 @@ jobs:
             repo: context.repo.repo,
             issue_number: context.issue.number,
             body: comment
-          }); 
+          });

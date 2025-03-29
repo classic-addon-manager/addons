@@ -18,15 +18,17 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
     for field in required_fields:
         if field not in addon:
             errors.append(f"Missing required field: {field}")
-        elif not addon[field]:  # Check if field is empty
+        elif addon[field] is None or addon[field] == '':  # Check if field is empty
             errors.append(f"Required field '{field}' cannot be empty")
+        elif isinstance(addon[field], bool):  # Check if field is boolean instead of string
+            errors.append(f"Field '{field}' must be a string, not a boolean")
     
     # Name validation (no spaces)
-    if 'name' in addon and ' ' in addon['name']:
+    if 'name' in addon and isinstance(addon['name'], str) and ' ' in addon['name']:
         errors.append(f"Name field '{addon['name']}' contains spaces")
     
     # Repo format validation (username/reponame)
-    if 'repo' in addon and addon['repo']:
+    if 'repo' in addon and isinstance(addon['repo'], str) and addon['repo']:
         repo_pattern = re.compile(r'^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$')
         if not repo_pattern.match(addon['repo']):
             errors.append(f"Repo field '{addon['repo']}' must be in format 'username/reponame'")
@@ -39,6 +41,11 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             errors.append(f"Too many categories/tags: {len(addon['tags'])} (maximum is 4)")
         elif not addon['tags']:  # Check if tags list is empty
             errors.append("Tags list cannot be empty")
+        else:
+            # Validate each tag is a string
+            for i, tag in enumerate(addon['tags']):
+                if not isinstance(tag, str):
+                    errors.append(f"Tag at position {i+1} must be a string")
     
     # Validate that no unknown fields are present
     all_valid_fields = required_fields + optional_fields
@@ -65,15 +72,17 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
             # Try parsing YAML
             try:
                 addon_data = yaml.safe_load(content)
+                if not isinstance(addon_data, dict):
+                    all_errors.append(f"Invalid YAML structure: expected a dictionary/object, got {type(addon_data).__name__}")
+                    continue
             except yaml.YAMLError as e:
                 all_errors.append(f"Invalid YAML syntax: {str(e)}")
                 continue
             
             # Validate the addon entry
-            if isinstance(addon_data, dict):
-                errors = validate_addon(addon_data)
-                if errors:
-                    all_errors.extend(errors)
+            errors = validate_addon(addon_data)
+            if errors:
+                all_errors.extend(errors)
                     
         except Exception as e:
             all_errors.append(f"Error processing file: {str(e)}")
