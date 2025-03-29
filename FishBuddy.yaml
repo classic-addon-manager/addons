@@ -1,7 +1,6 @@
-name: FishBuddy
+name: Fish Buddy
 alias: FishBuddy
 description: QoL improvements for fishing.
-author: Kg
-repo: kg-aac/FishBuddy
+repo: kg-aac@FishBuddy
 branch: main
-tags: ["PvE", "Fishing", "Utility"]
+tags: ["PvE", "Fishing", "Utility", "Test", "FishBuddy"]
