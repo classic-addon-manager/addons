@@ -29,7 +29,8 @@ jobs:
     - name: Get changed files
       id: changed-files
       run: |
-        echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | tr '\n' ' ')" >> $GITHUB_OUTPUT
+        # Get changed files but exclude .github directory
+        echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -v '^\.github/' | grep '\.ya\?ml$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
 
     - name: Validate changes
       id: validate
