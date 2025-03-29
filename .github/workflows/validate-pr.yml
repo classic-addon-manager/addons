@@ -1,0 +1,59 @@
+name: Validate Pull Request
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml
+
+    - name: Get changed files
+      id: changed-files
+      run: |
+        echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | tr '\n' ' ')" >> $GITHUB_OUTPUT
+
+    - name: Validate changes
+      id: validate
+      run: |
+        python .github/validate_addon.py ${{ steps.changed-files.outputs.files }}
+
+    - name: Comment on PR
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          
+          // Get the error output from the previous step
+          const errorOutput = process.env.GITHUB_STEP_SUMMARY || '';
+          
+          let comment = '### ❌ Validation Failed\n\n';
+          comment += 'The following issues were found in your addon submission:\n\n';
+          comment += errorOutput.replace(/::error::/g, '- ');
+          comment += '\n\nPlease fix these issues and update your pull request.';
+          
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: comment
+          }); 
