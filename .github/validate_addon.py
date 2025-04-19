@@ -2,6 +2,7 @@ import yaml
 import json
 import sys
 import re
+import requests
 from typing import List, Dict, Any
 
 def validate_addon(addon: Dict[str, Any]) -> List[str]:
@@ -34,6 +35,7 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             errors.append(f"Name field '{addon['name']}' contains spaces")
     
     # Repo format validation (username/reponame)
+    repo_valid_format = False
     if 'repo' in addon and addon['repo'] is not None:
         if isinstance(addon['repo'], bool):
             # Already captured above, skip to avoid duplicate errors
@@ -44,7 +46,30 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             repo_pattern = re.compile(r'^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$')
             if not repo_pattern.match(addon['repo']):
                 errors.append(f"Repo field '{addon['repo']}' must be in format 'username/reponame'")
-    
+            else:
+                repo_valid_format = True # Mark format as valid for release check
+
+    # GitHub Release check (only if repo format is valid)
+    if repo_valid_format:
+        repo_name = addon['repo']
+        api_url = f"https://api.github.com/repos/{repo_name}/releases"
+        try:
+            response = requests.get(api_url, headers={'Accept': 'application/vnd.github.v3+json'}, timeout=10)
+            if response.status_code == 200:
+                releases = response.json()
+                if not releases:
+                    errors.append(f"Repository '{repo_name}' must have at least one release on GitHub.")
+            elif response.status_code == 404:
+                errors.append(f"Repository '{repo_name}' not found on GitHub.")
+            elif response.status_code == 403: # Rate limit or other access issue
+                 print(f"::warning::Could not check releases for {repo_name} due to GitHub API rate limit or access issue. Status: {response.status_code}. Response: {response.text}")
+                 # Optionally add a warning instead of an error, or skip the check
+                 # errors.append(f"Could not verify releases for '{repo_name}' due to GitHub API limitations.")
+            else:
+                errors.append(f"Failed to fetch releases for '{repo_name}'. Status code: {response.status_code}")
+        except requests.exceptions.RequestException as e:
+            errors.append(f"Error checking GitHub releases for '{repo_name}': {e}")
+
     # Tags/categories validation (max 4)
     if 'tags' in addon:
         if not isinstance(addon['tags'], list):
@@ -157,4 +182,4 @@ def main():
         sys.exit(0)
 
 if __name__ == "__main__":
-    main() 
+    main()
