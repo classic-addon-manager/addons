@@ -1,0 +1,7 @@
+name: imminent_jail
+alias: Imminent Jail
+description: Alerts you when at 39 or more crime points.
+author: Notuli
+repo: michaelqtz/aac-addon-imminent_jail
+branch: main
+tags: ["PvP", "Utility"]
