@@ -45,7 +45,7 @@ jobs:
           exit 1
         fi
 
-    - name: Comment on PR
+    - name: Comment on PR on Failure
       if: failure() && steps.validate.outcome == 'failure'
       uses: actions/github-script@v6
       with:
@@ -72,4 +72,16 @@ jobs:
             repo: context.repo.repo,
             issue_number: context.issue.number,
             body: comment
+          });
+
+    - name: Comment on PR on Success
+      if: success() && steps.validate.outcome == 'success'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: '### ✅ Validation Passed\n\nLooks good to me!'
           });
