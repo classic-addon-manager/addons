@@ -13,80 +13,84 @@ jobs:
       contents: read
 
     steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pyyaml requests
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml requests
 
-    - name: Get changed files
-      id: changed-files
-      run: |
-        # Get changed files but exclude .github directory
-        echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -v '^\.github/' | grep '\.ya\?ml$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
+      - name: Get changed files
+        id: changed-files
+        run: |
+          # Get changed files but exclude .github directory
+          echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -v '^\.github/' | grep '\.ya\?ml$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
 
-    - name: Validate changes
-      id: validate
-      run: |
-        # Show the files we're validating
-        echo "Files to validate: ${{ steps.changed-files.outputs.files }}"
-        # Run validation and capture output
-        python .github/validate_addon.py ${{ steps.changed-files.outputs.files }} 2>&1 | tee output.txt
-        # Check if there were validation errors in the output
-        if grep -q "::error::" output.txt; then
-          echo "Found validation errors"
-          exit 1
-        fi
+      - name: Validate changes
+        id: validate
+        run: |
+          # Show the files we're validating
+          echo "Files to validate: ${{ steps.changed-files.outputs.files }}"
+          # Run validation and capture output
+          python .github/validate_addon.py ${{ steps.changed-files.outputs.files }} 2>&1 | tee output.txt
+          # Check if there were validation errors in the output
+          if grep -q "::error::" output.txt; then
+            echo "Found validation errors"
+            exit 1
+          fi
 
-    - name: Comment on PR on Failure
-      if: failure() && steps.validate.outcome == 'failure'
-      uses: actions/github-script@v6
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        script: |
-          const fs = require('fs');
-          
-          // Read the output file
-          const output = fs.readFileSync('output.txt', 'utf8');
-          
-          // Extract just the error messages
-          const errors = output
-            .split('\n')
-            .filter(line => line.includes('::error::'))
-            .map(line => line.replace(/^.*::error::/g, '').trim())
-            .filter(line => line && !line.includes('The following issues were found'));
-          
-          let comment = '### ❌ Validation Failed\n\n';
-          comment += 'The following issues were found in your addon submission:\n\n';
-          comment += errors.map(error => `- ${error}`).join('\n');
-          comment += '\n\nPlease fix these issues and update your pull request.';
-          
-          await github.rest.issues.createComment({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: context.issue.number,
-            body: comment
-          });
+      - name: Comment on PR on Failure
+        if: failure() && steps.validate.outcome == 'failure'
+        uses: actions/github-script@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          script: |
+            const fs = require('fs');
 
-    - name: Comment on PR on Success
-      if: success() && steps.validate.outcome == 'success'
-      uses: actions/github-script@v6
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        script: |
-          await github.rest.issues.createComment({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: context.issue.number,
-            body: '### ✅ Validation Passed\n\nLooks good to me!'
-          });
+            // Read the output file
+            const output = fs.readFileSync('output.txt', 'utf8');
+
+            // Extract just the error messages
+            const errors = output
+              .split('\n')
+              .filter(line => line.includes('::error::'))
+              .map(line => line.replace(/^.*::error::/g, '').trim())
+              .filter(line => line && !line.includes('The following issues were found'));
+
+            let comment = '### ❌ Validation Failed\n\n';
+            comment += 'The following issues were found in your addon submission:\n\n';
+            comment += errors.map(error => `- ${error}`).join('\n');
+            comment += '\n\nPlease fix these issues and update your pull request.';
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: comment
+            });
+
+      - name: Comment on PR on Success
+        if: success() && steps.validate.outcome == 'success'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: '### ✅ Validation Passed\n\nLooks good to me!'
+              });
+              console.log("Successfully posted comment");
+            } catch (error) {
+              console.error("Error posting comment:", error);
+            }
