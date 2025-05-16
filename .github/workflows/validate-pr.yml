@@ -50,7 +50,7 @@ jobs:
         if: failure() && steps.validate.outcome == 'failure'
         uses: actions/github-script@v6
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CAM_TOKEN }}
         with:
           script: |
             const fs = require('fs');
@@ -80,8 +80,10 @@ jobs:
       - name: Comment on PR on Success
         if: success() && steps.validate.outcome == 'success'
         uses: actions/github-script@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.CAM_TOKEN }}
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.CAM_TOKEN }}
           script: |
             try {
               await github.rest.issues.createComment({
