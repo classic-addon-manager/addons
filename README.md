@@ -52,6 +52,7 @@ A addon declaration (plugin.yaml) file must consist of 7 fields, there are also 
 7. branch (required)
 8. tags (required)
 9. kofi (optional)
+10. keywords (optional)
 
 `name` is the field that declares the name of the addon and is what will be put in your addons.txt file as well as your Addon directory. This field should match the filename.
 
@@ -77,6 +78,22 @@ dependencies: ['example-plugin']
 `tags` is a string array determining ways to indicate what your addon is about to the end user as well as being possible to filter on. Ensure you surround your tags with single quotes `'`
 
 `kofi` is your username on [ko-fi.com](https://ko-fi.com), ko-fi is a service that allows users to support you monetarily as a creator. If you add a ko-fi username your addon will show a "support author" section.
+
+`keywords` is the field used by the Daru AI Assistant to help recommend your addons to users. It is the best and most important way to have your addon discovered through the use of the Daru Assistant.
+
+Each keyword must be one word, no spaces allowed. If you want to use dashes you **must** quote it using quotes! It is recommended to use simple keywords that describe your addon. 
+
+There's a total limit of 255 characters combined (each word + 1 space). This should allow up to ~25-50 depending keywords depending on the length.
+
+Here's how you use it:
+
+```yaml
+keywords:
+  - crafting
+  - naval
+  - pve
+```
+
 
 ### How to push updates to users
 Classic Addon Manager uses github releases to push updates to users.
