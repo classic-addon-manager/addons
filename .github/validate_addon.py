@@ -3,6 +3,7 @@ import json
 import sys
 import re
 import requests
+
 from typing import List, Dict, Any
 
 def validate_addon(addon: Dict[str, Any]) -> List[str]:
@@ -13,7 +14,7 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
     
     # Required fields check
     required_fields = ['name', 'alias', 'description', 'author', 'repo', 'branch', 'tags']
-    optional_fields = ['dependencies', 'kofi']
+    optional_fields = ['dependencies', 'kofi', 'keywords']
     
     # Check required fields
     for field in required_fields:
@@ -68,9 +69,7 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             else:
                 errors.append(f"Failed to fetch releases for '{repo_name}'. Status code: {response.status_code}")
         except requests.exceptions.RequestException as e:
-            errors.append(f"Error checking GitHub releases for '{repo_name}': {e}")
-
-    # Tags/categories validation (max 4)
+            errors.append(f"Error checking GitHub releases for '{repo_name}': {e}")    # Tags/categories validation (max 4)
     if 'tags' in addon:
         if not isinstance(addon['tags'], list):
             if isinstance(addon['tags'], bool):
@@ -86,6 +85,27 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             for i, tag in enumerate(addon['tags']):
                 if not isinstance(tag, str):
                     errors.append(f"Tag at position {i+1} must be a string, got {type(tag).__name__}")
+    
+    # Keywords validation
+    if 'keywords' in addon:
+        if not isinstance(addon['keywords'], list):
+            if isinstance(addon['keywords'], bool):
+                errors.append("Keywords field must be a list, not a boolean")
+            else:
+                errors.append(f"Keywords field must be a list, got {type(addon['keywords']).__name__}")
+        else:
+            # Validate each keyword is a string and contains no spaces
+            for i, keyword in enumerate(addon['keywords']):
+                if not isinstance(keyword, str):
+                    errors.append(f"Keyword at position {i+1} must be a string, got {type(keyword).__name__}")
+                elif ' ' in keyword:
+                    errors.append(f"Keyword at position {i+1} '{keyword}' cannot contain spaces")
+            
+            # Check concatenated string length (only if all keywords are valid strings)
+            if all(isinstance(keyword, str) for keyword in addon['keywords']):
+                concatenated_keywords = ' '.join(addon['keywords'])
+                if len(concatenated_keywords) > 255:
+                    errors.append(f"Keywords concatenated string length ({len(concatenated_keywords)} characters) exceeds 255 character limit")
     
     # Validate that no unknown fields are present
     all_valid_fields = required_fields + optional_fields
