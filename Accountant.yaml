@@ -1,6 +1,11 @@
 name: Accountant
 alias: Accountant
 description: Tracking gold
+keywords:
+  - tracking
+  - gold
+  - money
+  - finance
 author: Misosoup
 repo: IvanLeviathan/Accountant
 branch: master

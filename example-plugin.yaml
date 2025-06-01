@@ -1,6 +1,13 @@
 name: example-plugin
 alias: Example Plugin
 description: A plugin that simply acts as a way to learn the addon system
+keywords:
+  - plugin
+  - example
+  - learning
+  - addon
+  - system
+  - tutorial
 author: Aguru
 repo: classic-addon-manager/example-plugin
 branch: master

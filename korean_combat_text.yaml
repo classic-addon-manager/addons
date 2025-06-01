@@ -1,6 +1,12 @@
 name: korean_combat_text
 alias: Korean Combat Text
 description: Replace combat text with custom font.
+keywords:
+  - combat
+  - text
+  - font
+  - custom
+  - replace
 author: Notuli
 repo: michaelqtz/aac-addon-korean_combat_text
 branch: main

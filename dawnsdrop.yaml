@@ -1,6 +1,12 @@
 name: dawnsdrop
 alias: Dawnsdrop Check
 description: Checks if you have tracked items equipped
+keywords:
+  - check
+  - tracked
+  - item
+  - equipped
+  - monitor
 author: Delarme
 repo: Draygo-aac/aac-dawnsdrop
 branch: main

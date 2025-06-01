@@ -1,6 +1,12 @@
 name: dailyage
 alias: DailyAge
 description: Daily and Weekly Quest Tracker.
+keywords:
+  - daily
+  - weekly
+  - quest
+  - tracker
+  - progress
 author: Notuli
 repo: michaelqtz/aac-addon-dailyage
 branch: main

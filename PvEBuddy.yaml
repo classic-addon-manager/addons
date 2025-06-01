@@ -1,6 +1,12 @@
 name: PvEBuddy
 alias: PvE Buddy
 description: Basic PvE Utilities
+keywords:
+  - pve
+  - utility
+  - basic
+  - helper
+  - tool
 author: Silverbranch
 repo: NathenSample/PvEBuddy
 branch: main

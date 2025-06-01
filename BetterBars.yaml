@@ -1,6 +1,11 @@
 name: BetterBars
 alias: BetterBars
 description: Simply Makes the playerbars Better.
+keywords:
+  - playerbar
+  - ui
+  - improvement
+  - interface
 author: Dehling
 repo: DelmonDev/BetterBars
 branch: main

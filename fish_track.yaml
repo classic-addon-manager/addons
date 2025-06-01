@@ -1,6 +1,12 @@
 name: fish_track
 alias: fish_track
 description: Mysterious tracker for fishing!
+keywords:
+  - fishing
+  - tracker
+  - mysterious
+  - monitor
+  - catch
 author: Usb
 repo: sjwayrhz/fish_track
 branch: master

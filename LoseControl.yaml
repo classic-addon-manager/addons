@@ -1,6 +1,12 @@
 name: LoseControl
 alias: Lose Control
 description: Tracks CC debuffs on you.
+keywords:
+  - track
+  - cc
+  - debuff
+  - control
+  - monitor
 author: Misosoup
 repo: IvanLeviathan/LoseControl
 branch: master

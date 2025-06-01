@@ -1,6 +1,12 @@
 name: timers
 alias: Timers
 description: Simple stopwatch addon for Archeage
+keywords:
+  - timer
+  - stopwatch
+  - time
+  - tracking
+  - utility
 author: Delarme
 repo: Draygo-aac/aac-timers
 branch: main

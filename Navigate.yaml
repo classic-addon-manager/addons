@@ -1,6 +1,12 @@
 name: Navigate
 alias: Navigate
 description: Share points on map
+keywords:
+  - share
+  - point
+  - map
+  - navigation
+  - location
 author: Misosoup
 repo: IvanLeviathan/Navigate
 branch: master

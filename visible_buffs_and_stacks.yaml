@@ -1,6 +1,13 @@
 name: visible_buffs_and_stacks
 alias: Visible Buffs & Stacks
 description: Removes buff blink, and improves stack text.
+keywords:
+  - buff
+  - stack
+  - visible
+  - blink
+  - text
+  - improvement
 author: Notuli
 repo: michaelqtz/aac-addon-visible_buffs_and_stacks
 branch: main

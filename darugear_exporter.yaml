@@ -1,6 +1,12 @@
 name: darugear_exporter
 alias: DaruGear Exporter
 description: Export your gear to DaruGear.com from your character info.
+keywords:
+  - export
+  - gear
+  - character
+  - darugear
+  - equipment
 author: Notuli
 repo: michaelqtz/aac-addon-darugear_exporter
 branch: main

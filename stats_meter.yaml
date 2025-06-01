@@ -1,6 +1,13 @@
 name: stats_meter
 alias: Stats Meter
 description: A stats meter covering damage, healing, DPS, HPS, etc.
+keywords:
+  - stat
+  - meter
+  - damage
+  - healing
+  - dps
+  - hps
 author: Notuli
 repo: michaelqtz/aac-addon-stats_meter
 branch: main

@@ -1,6 +1,12 @@
 name: ExpressYourself
 alias: Express Yourself
 description: Express emotions while chatting
+keywords:
+  - express
+  - emotion
+  - chat
+  - communication
+  - social
 author: Misosoup
 repo: IvanLeviathan/ExpressYourself
 branch: master

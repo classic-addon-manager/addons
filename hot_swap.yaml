@@ -1,6 +1,12 @@
 name: hot_swap
 alias: Hot Swap
 description: An addon to quickly swap betweens sets of gear
+keywords:
+  - swap
+  - gear
+  - equipment
+  - quick
+  - automation
 author: Mike
 repo: MikeTheShadow/hot_swap
 branch: main

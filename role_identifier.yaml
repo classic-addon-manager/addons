@@ -1,6 +1,13 @@
 name: role_identifier
 alias: Role Identifier
 description: Addon for detecting tank/healers classes.
+keywords:
+  - role
+  - identifier
+  - tank
+  - healer
+  - class
+  - detect
 author: Misosoup
 repo: IvanLeviathan/role_identifier
 branch: master

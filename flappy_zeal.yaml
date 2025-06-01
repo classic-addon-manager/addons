@@ -1,6 +1,12 @@
 name: flappy_zeal
 alias: Flappy Zeal
 description: Flappy bird but with zeal
+keywords:
+  - flappy
+  - bird
+  - game
+  - zeal
+  - minigame
 author: Fmpwire
 repo: fmpwire/flappy_zeal
 branch: main

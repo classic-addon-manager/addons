@@ -1,6 +1,12 @@
 name: friendly_notes
 alias: Friendly Notes
 description: Right Click a friend and add notes to them!
+keywords:
+  - friend
+  - note
+  - annotation
+  - social
+  - reminder
 author: Aguru
 repo: AguruC/friendly_notes
 branch: main

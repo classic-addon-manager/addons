@@ -1,6 +1,12 @@
 name: FishBuddy
 alias: FishBuddy
 description: QoL improvements for fishing.
+keywords:
+  - fishing
+  - qol
+  - improvement
+  - quality
+  - life
 author: Kg
 repo: kg-aac/FishBuddy
 branch: main

@@ -1,6 +1,12 @@
 name: high_ground
 alias: High Ground
 description: Displays your bonus damage due to height.
+keywords:
+  - damage
+  - bonus
+  - height
+  - display
+  - combat
 author: Notuli
 repo: michaelqtz/aac-addon-high_ground
 branch: main

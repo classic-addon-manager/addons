@@ -1,6 +1,12 @@
 name: FFF
 alias: Firran Fur Finder
 description: Tells you when your costume is expired
+keywords:
+  - costume
+  - expired
+  - notification
+  - reminder
+  - timer
 author: Mike
 repo: MikeTheShadow/firran_fur_finder
 branch: master

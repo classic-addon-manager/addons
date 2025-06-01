@@ -1,6 +1,12 @@
 name: unsafe_portals
 alias: Unsafe Portals
 description: Adds a button to disable safe portal option briefly.
+keywords:
+  - portal
+  - unsafe
+  - button
+  - disable
+  - option
 author: Notuli
 repo: michaelqtz/aac-addon-unsafe_portals
 branch: main

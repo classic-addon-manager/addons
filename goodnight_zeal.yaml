@@ -1,6 +1,12 @@
 name: goodnight_zeal
 alias: Goodnight Zeal
 description: A screensaver using the zeal icon
+keywords:
+  - screensaver
+  - zeal
+  - icon
+  - display
+  - idle
 author: Fmpwire
 repo: fmpwire/goodnight_zeal
 branch: main

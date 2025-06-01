@@ -1,6 +1,12 @@
 name: addonlibrary
 alias: Addon Library
-description: Function Library for addons. Does nothing on its own. 
+description: Function Library for addons. Does nothing on its own.
+keywords:
+  - function
+  - library
+  - addon
+  - utility
+  - api
 author: Multiple
 repo: Draygo-aac/aac-addonlibrary
 branch: main

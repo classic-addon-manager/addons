@@ -1,6 +1,12 @@
 name: TrackThatPlease
 alias: TrackThatPlease
 description: Tracks buffs/debuffs on target, with UI.
+keywords:
+  - track
+  - buff
+  - debuff
+  - target
+  - ui
 author: Dehling
 repo: DelmonDev/TrackThatPlease
 branch: main

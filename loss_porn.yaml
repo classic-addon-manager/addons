@@ -1,6 +1,12 @@
 name: loss_porn
 alias: Loss Porn
 description: See failed regrades from other players in chat.
+keywords:
+  - regrade
+  - failed
+  - chat
+  - player
+  - notification
 author: Notuli
 repo: michaelqtz/aac-addon-loss_porn
 branch: main
