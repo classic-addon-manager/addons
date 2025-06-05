@@ -2,9 +2,10 @@ name: Bard Helper
 alias: bard helper
 description: Shows songs time remaining
 keywords:
-  - check
   - tracked
   - monitor
+  - songcraft
+  - bard
 author: Waifu
 repo: Kotatsu1/aac-addon-Bard_Helper
 branch: main
