@@ -1,0 +1,12 @@
+name: automatic_raid_roles
+alias: Automatic Raid ROles
+description: Automatically sets your raid roles based on saved preferences.
+author: Winterflame
+repo: DennysOliveira/automatic-raid-roles
+branch: main
+tags: ["Utility"]
+keywords:
+  - automatic
+  - raid
+  - roles
+  - saved
