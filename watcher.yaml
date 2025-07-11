@@ -1,0 +1,13 @@
+name: watcher
+alias: Watcher - Economy
+description: Economy tracking, in-depth, simplified.
+author: Winterflame
+repo: DennysOliveira/watcher
+branch: main
+tags: ["Utility"]
+keywords:
+  - economy
+  - tracking
+  - gold
+  - labor
+  - used
