@@ -1,0 +1,13 @@
+name: set_swap
+alias: Set Swap
+description: Easy to use bar to quick-swap your gear.
+author: Winterflame
+repo: DennysOliveira/set_swap
+branch: main
+tags: ["Utility", "QoL"]
+keywords:
+  - quickly
+  - swap
+  - equipment
+  - set
+  - gear
