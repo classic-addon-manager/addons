@@ -12,3 +12,4 @@ author: Delarme
 repo: Draygo-aac/aac-raidstats
 branch: main
 tags: ["Utility"]
+dependencies: ['addonlibrary']
