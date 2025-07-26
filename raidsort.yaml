@@ -1,0 +1,12 @@
+name: raidsort
+alias: Raid Sort
+description: Sort your raid with one simple button
+keywords:
+  - raid
+  - sort
+  - member
+author: Delarme
+repo: Draygo-aac/aac-raidsort
+branch: main
+tags: ["Utility"]
+dependencies: ['raidstats']
