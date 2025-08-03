@@ -8,5 +8,5 @@ keywords:
 author: Delarme
 repo: Draygo-aac/aac-raidsort
 branch: main
-tags: ["Utility"]
+tags: ["Utility", "Raid"]
 dependencies: ['raidstats']
