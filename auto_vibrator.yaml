@@ -1,0 +1,11 @@
+name: auto_vibrator
+alias: Auto Vibrator
+description: Automatically controls vibration devices based on ingame events.
+author: Emi
+repo: BunnyEmika/archeageclassicautovibrator
+branch: main
+tags: ["Utility"]
+keywords:
+  - automatic
+  - pvp
+  - pve
