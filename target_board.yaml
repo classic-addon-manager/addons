@@ -1,0 +1,11 @@
+name: target_board
+alias: Target Board
+description: Auto-fill chat with preset /target text.
+keywords:
+  - raid
+  - ui
+author: Sheoix
+repo: michaelqtz/aac-addon-target_board
+branch: main
+tags: ["Utility"]
+kofi: michaelqt
