@@ -97,7 +97,7 @@ keywords:
 #### Generate an addon YAML file from a form
 You can easily generate a YAML file by going to the following URL and entering the data as needed. It's important to still understand what each field does but this tool is designed to assist you in creating the file.
 
-![Create your YAML file here.](https://aac.gaijin.dev/addon/create)
+[Create your YAML file here.](https://aac.gaijin.dev/addon/create)
 
 ### How to push updates to users
 Classic Addon Manager uses github releases to push updates to users.
