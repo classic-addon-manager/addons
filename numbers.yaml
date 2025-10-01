@@ -1,0 +1,14 @@
+name: numbers
+alias: Numbers
+description: Numbers diff or skill diff? (It's numbers)
+keywords:
+  - meter
+  - pvp
+  - guild
+  - raid
+  - counter
+author: Notuli
+repo: michaelqtz/aac-addon-numbers
+branch: main
+tags: ["PvP", "Utility"]
+kofi: michaelqt
