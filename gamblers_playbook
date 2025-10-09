@@ -1,0 +1,17 @@
+name: gamblers_playbook
+alias: Gambler's Playbook
+description: Bugira's Coin gambling tracker and more.
+keywords:
+  - gamble
+  - rng
+  - gamba
+  - slots
+  - casino
+  - gambling
+  - random
+  - tracker
+author: Notuli
+repo: michaelqtz/aac-addon-gamblers_playbook
+branch: main
+tags: ["Utility"]
+kofi: michaelqt
