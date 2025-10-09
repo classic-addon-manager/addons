@@ -35,11 +35,15 @@ jobs:
 
       - name: Validate changes
         id: validate
+        shell: bash
         run: |
+          set -euo pipefail
           # Show the files we're validating
           echo "Files to validate: ${{ steps.changed-files.outputs.files }}"
           # Run validation and capture output
           python .github/validate_addon.py ${{ steps.changed-files.outputs.files }} 2>&1 | tee output.txt
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ]; then exit "$status"; fi
           # Check if there were validation errors in the output
           if grep -q "::error::" output.txt; then
             echo "Found validation errors"
