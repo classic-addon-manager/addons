@@ -122,7 +122,7 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
     all_errors = []
     
     for file_path in pr_files:
-        if not file_path.endswith('.yml') and not file_path.endswith('.yaml'):
+        if not file_path.endswith('.yaml'):
             continue
             
         try:
@@ -187,9 +187,17 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
 def main():
     # Get list of changed files from command line arguments
     changed_files = sys.argv[1:]
+
+    # Consider only .yaml files
+    yaml_files = [p for p in changed_files if p.endswith('.yaml')]
+
+    # If there are no .yaml files, fail the validation
+    if not yaml_files:
+        print("::error::No YAML (.yaml) files were found in this pull request.")
+        sys.exit(1)
     
     # Validate the changes
-    errors = validate_pr_changes(changed_files)
+    errors = validate_pr_changes(yaml_files)
     
     # Output results in GitHub Actions format
     if errors:
