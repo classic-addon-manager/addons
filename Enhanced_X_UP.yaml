@@ -3,10 +3,8 @@ alias: Enhanced X UP
 description: Addon for AAClassic that enabled X UP Raids w/ Player Blacklisting
 keywords:
   - xup
-  - xingup
-  - easy
+  - simple
   - addon
-  - blacklisting
 author: Yuck
 repo: RedNetty/Enhanced-X-UP
 branch: main
