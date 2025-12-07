@@ -1,0 +1,11 @@
+name: Weapon_Proc
+alias: Weapon Proc
+description: Displays weapon hidden proc status. Created with George.
+keywords:
+  - weapon
+  - hidden
+  - proc
+author: Wagasez
+repo: felipeggrs/weaponProc
+branch: master
+tags: ["Combat"]
