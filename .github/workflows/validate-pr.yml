@@ -43,6 +43,15 @@ jobs:
           files=$(echo "$files" | tr '\n' ' ' | sed -e 's/[[:space:]]*$//')
           echo "files=$files" >> $GITHUB_OUTPUT
 
+      - name: Checkout changed files
+        if: ${{ steps.changed-files.outputs.files != '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          files="${{ steps.changed-files.outputs.files }}"
+          echo "Checking out files from PR head: $files"
+          git checkout pr-head -- $files
+
       - name: Validate changes
         id: validate
         shell: bash
