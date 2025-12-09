@@ -17,6 +17,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Fetch PR head ref
+        run: |
+          git fetch origin pull/${{ github.event.pull_request.number }}/head:pr-head
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -30,8 +34,14 @@ jobs:
       - name: Get changed files
         id: changed-files
         run: |
-          # Get changed files but exclude .github directory
-          echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | grep -v '^\.github/' | grep '\.ya\?ml$' | tr '\n' ' ')" >> $GITHUB_OUTPUT
+          set -euo pipefail
+          BASE_SHA=${{ github.event.pull_request.base.sha }}
+          HEAD_REF=pr-head
+          MERGE_BASE=$(git merge-base "$BASE_SHA" "$HEAD_REF")
+          echo "Diffing $MERGE_BASE...$HEAD_REF"
+          files=$(git diff --name-only "$MERGE_BASE" "$HEAD_REF" | grep -v '^\.github/' | grep -E '\.ya?ml$' || true)
+          files=$(echo "$files" | tr '\n' ' ' | sed -e 's/[[:space:]]*$//')
+          echo "files=$files" >> $GITHUB_OUTPUT
 
       - name: Validate changes
         id: validate
