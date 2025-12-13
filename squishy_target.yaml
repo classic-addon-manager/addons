@@ -1,0 +1,14 @@
+name: squishy_target
+alias: Squishy Target
+description: Find the squishy. Displays the target's defense.
+keywords:
+  - pvp
+  - combat
+  - defense
+  - magic defense
+  - target
+author: Wagasez
+repo: felipeggrs/squishy_target
+branch: main
+tags: ["PvP"]
+kofi: wagasez
