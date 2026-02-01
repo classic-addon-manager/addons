@@ -1,0 +1,12 @@
+name: treasure_track
+alias: Treasure Track
+description: Labels treasure maps with known location names.
+keywords:
+  - utility
+  - map
+  - qol
+author: Wagasez
+repo: felipeggrs/treasure_track
+branch: main
+tags: ["QoL"]
+kofi: wagasez
