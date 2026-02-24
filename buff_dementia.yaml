@@ -1,0 +1,13 @@
+name: buff_dementia
+alias: Buff Dementia
+description: Configurable buff bar
+keywords:
+  - buff
+  - bar
+  - tracker
+  - configurable
+  - hud
+author: Iridiscent
+repo: Traine9/buff_dementia
+branch: main
+tags: ["Buffs", "UI"]
