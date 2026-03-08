@@ -1,0 +1,17 @@
+name: WorldSatNav
+alias: World SatNav
+description: Because mapping while having to think sucks
+author: Madpeter
+repo: Madpeterz/WorldSatNav
+branch: main
+tags:
+  - 'map'
+  - 'events'
+  - 'ui'
+  - 'Treasure-Maps'
+kofi: madpeter
+keywords:
+  - map
+  - events
+  - ui
+  - Treasure-Maps
