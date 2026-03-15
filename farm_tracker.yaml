@@ -1,6 +1,6 @@
 name: farm_tracker
 alias: Farm Tracker
-description: Track entity timers gathered from mouseover.
+description: Track entity timers gathered from mouseover. 
 author: Patricia
 repo: richys-hub/farm_tracker
 branch: main
