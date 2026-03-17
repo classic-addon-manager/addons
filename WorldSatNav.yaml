@@ -5,12 +5,12 @@ author: Madpeter
 repo: Madpeterz/WorldSatNav
 branch: main
 tags:
+  - Map
+  - UI
+  - Other
+kofi: madpeter
+keywords:
   - 'map'
   - 'events'
   - 'ui'
   - 'Treasure-Maps'
-kofi: madpeter
-keywords:
-  - Map
-  - UI
-  - Other
