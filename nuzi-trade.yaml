@@ -1,0 +1,13 @@
+name: nuzi-trade
+alias: Nuzi Trade
+description: Trade pack price browser with route filtering and live percent input.
+keywords:
+  - trade
+  - packs
+  - economy
+  - cargo
+  - routes
+author: Nuzi
+repo: Nuziatella/nuzi-trade
+branch: main
+tags: ["Utility", "QoL"]
