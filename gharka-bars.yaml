@@ -1,0 +1,13 @@
+name: gharka-bars
+alias: Gharka Bars
+description: Overhead raid bars with role colors and layout controls.
+keywords:
+  - raid
+  - bars
+  - overhead
+  - health
+  - role
+author: Nuzi
+repo: Nuziatella/gharka-bars
+branch: main
+tags: ["Utility", "Raid", "UI"]

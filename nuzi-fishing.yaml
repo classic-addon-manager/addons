@@ -1,0 +1,13 @@
+name: nuzi-fishing
+alias: Nuzi Fishing
+description: Sport fishing coach with prompts, timers, and catch tracking.
+keywords:
+  - fishing
+  - sport
+  - timers
+  - prompts
+  - ocean
+author: Nuzi
+repo: Nuziatella/nuzi-fishing
+branch: main
+tags: ["PvE", "Fishing", "Utility"]

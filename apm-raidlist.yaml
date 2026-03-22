@@ -1,0 +1,13 @@
+name: apm-raidlist
+alias: APM RaidList
+description: Prints raid classes and member names to chat.
+keywords:
+  - raid
+  - classes
+  - roster
+  - chat
+  - utility
+author: Nuzi
+repo: Nuziatella/apm-raidlist
+branch: main
+tags: ["Utility", "Raid"]
