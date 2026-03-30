@@ -1,0 +1,13 @@
+name: nuzi-raid
+alias: Nuzi Raid
+description: Standalone custom raid frames with optimized updates.
+keywords:
+  - raid
+  - frames
+  - healing
+  - party
+  - ui
+author: Nuzi
+repo: Nuziatella/nuzi-raid
+branch: main
+tags: ["Utility", "Raid", "UI"]
