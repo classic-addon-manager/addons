@@ -1,5 +1,5 @@
-name: polar-raid
-alias: Polar Raid
+name: nuzi-raid
+alias: Nuzi Raid
 description: Standalone custom raid frames with optimized updates.
 keywords:
   - raid
@@ -8,6 +8,7 @@ keywords:
   - party
   - ui
 author: Nuzi
-repo: Nuziatella/polar-raid
+repo: Nuziatella/nuzi-raid
 branch: main
 tags: ["Utility", "Raid", "UI"]
+
