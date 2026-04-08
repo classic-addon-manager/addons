@@ -1,0 +1,13 @@
+name: nuzi-vehicles
+alias: Nuzi Vehicles
+description: Vehicle speed profiler and nautical compass with heading guidance.
+keywords:
+  - vehicles
+  - boats
+  - speed
+  - compass
+  - navigation
+author: Nuzi
+repo: Nuziatella/nuzi-vehicles
+branch: main
+tags: ["Utility", "Navigation", "Vehicles"]
