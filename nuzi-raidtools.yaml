@@ -1,0 +1,13 @@
+name: nuzi-raidtools
+alias: Nuzi Raidtools
+description: Raid manager tools with auto-invite, whitelist management, and streamlined raid info.
+keywords:
+  - raid
+  - tools
+  - whitelist
+  - recruit
+  - invite
+author: Nuzi
+repo: Nuziatella/nuzi-raidtools
+branch: main
+tags: ["Utility", "Raid", "UI"]
