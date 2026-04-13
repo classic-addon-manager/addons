@@ -1,0 +1,14 @@
+name: nuzi-inventory
+alias: Nuzi Inventory
+dependencies: ['addonlibrary']
+description: Search bag, bank, alt, and tracked items across your roster.
+keywords:
+  - inventory
+  - bank
+  - alts
+  - tracking
+  - items
+author: Nuzi
+repo: Nuziatella/nuzi-inventory
+branch: main
+tags: ["Utility", "QoL", "Inventory"]
