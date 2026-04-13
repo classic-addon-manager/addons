@@ -1,5 +1,6 @@
 name: nuzi-raid
 alias: Nuzi Raid
+dependencies: ['addonlibrary']
 description: Standalone custom raid frames with optimized updates.
 keywords:
   - raid
@@ -11,4 +12,3 @@ author: Nuzi
 repo: Nuziatella/nuzi-raid
 branch: main
 tags: ["Utility", "Raid", "UI"]
-

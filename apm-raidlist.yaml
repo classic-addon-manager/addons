@@ -1,5 +1,6 @@
 name: apm-raidlist
 alias: APM RaidList
+dependencies: ['addonlibrary']
 description: Prints raid classes and member names to chat.
 keywords:
   - raid
