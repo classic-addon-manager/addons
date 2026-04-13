@@ -1,5 +1,6 @@
 name: nuzi-vehicles
 alias: Nuzi Vehicles
+dependencies: ['addonlibrary']
 description: Vehicle speed profiler and nautical compass with heading guidance.
 keywords:
   - vehicles
