@@ -1,0 +1,14 @@
+name: nuzi-ownersmark
+alias: Crp Car Alarm
+dependencies: ['addonlibrary']
+description: Owner's Mark tracker with warning overlays for your tracked vehicle.
+keywords:
+  - ownersmark
+  - vehicle
+  - warnings
+  - overlay
+  - utility
+author: Nuzi
+repo: Nuziatella/nuzi-ownersmark
+branch: main
+tags: ["Utility", "Vehicles", "Tracking"]
