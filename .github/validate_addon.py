@@ -4,7 +4,7 @@ import sys
 import re
 import requests
 
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 def validate_addon(addon: Dict[str, Any]) -> List[str]:
     """
@@ -34,6 +34,8 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             errors.append(f"Name field must be a string, got {type(addon['name']).__name__}")
         elif ' ' in addon['name']:
             errors.append(f"Name field '{addon['name']}' contains spaces")
+        elif not re.match(r'^[A-Za-z]', addon['name']):
+            errors.append(f"Addon name '{addon['name']}' must start with a letter A-Z")
     
     # Repo format validation (username/reponame)
     repo_valid_format = False
@@ -115,6 +117,24 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
     
     return errors
 
+def get_first_alpha_char(name: str) -> Optional[str]:
+    """Get first character from name if alphabetic, lowercase."""
+    if not name:
+        return None
+    first_char = name[0]
+    return first_char.lower() if re.match(r'^[A-Za-z]$', first_char) else None
+
+def validate_directory_placement(file_path: str, addon_name: str) -> Optional[str]:
+    """Returns error message if file in wrong directory, None if correct."""
+    first_char = get_first_alpha_char(addon_name)
+    if not first_char:
+        return f"Addon name '{addon_name}' must start with a letter A-Z"
+    expected_dir = f"{first_char}/"
+    normalized_path = file_path.replace('\\', '/').lstrip('./')
+    if not normalized_path.startswith(expected_dir):
+        return f"File '{file_path}' should be in directory '{first_char}/'"
+    return None
+
 def validate_pr_changes(pr_files: List[str]) -> List[str]:
     """
     Validates all changed YAML files in the PR.
@@ -163,6 +183,10 @@ def validate_pr_changes(pr_files: List[str]) -> List[str]:
                 if 'name' in addon_data and addon_data['name'] is not None:
                     if filename_without_ext != addon_data['name']:
                         all_errors.append(f"[{file_path}] Filename '{filename_without_ext}' must match the 'name' field '{addon_data['name']}'")
+                    
+                    dir_error = validate_directory_placement(file_path, addon_data['name'])
+                    if dir_error:
+                        all_errors.append(f"[{file_path}] {dir_error}")
 
             except yaml.YAMLError as e:
                 print(f"Raw YAML error: {str(e)}")
@@ -211,3 +235,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

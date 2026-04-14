@@ -35,6 +35,16 @@ A member will review your pull request and approve it after inspecting the addon
 The best way to get familiar with the addon file structure is to look at the example [located here](https://github.com/classic-addon-manager/example-plugin).
 It is expected to be a flat structure with your entrypoint in the root directory of the repository.
 
+#### Directory organization
+Addons are organized into alphabetical directories (a/, b/, c/, etc.) based on the first letter of the addon's `name` field. Addon names must start with a letter A-Z.
+
+For example:
+- `Accountant` → `a/Accountant.yaml`
+- `BetterBars` → `b/BetterBars.yaml`
+- `loss_porn` → `l/loss_porn.yaml`
+
+The validation script will reject addons placed in incorrect directories.
+
 #### Naming conventions
 Ensure that your addon's YAML file matches the name as best it can, for example if the addon's name is `example-plugin`, the YAML file should be called `example-plugin.yaml`.
 > [!WARNING]
@@ -111,5 +121,3 @@ In simple steps:
 2. Go to your github addon repository and click the link `Create a new release`.
 3. Fill out your release information and press `Publish release`
 4. Sit back and relax as the addon manager propagates the changes to the players.
-
-

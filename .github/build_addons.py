@@ -1,18 +1,22 @@
-import os
-import yaml
 import json
+import os
+from glob import glob
+
+import yaml
 
 directory = os.getcwd()
 output_file = "addons.json"
 combined_data = []
 
-for filename in os.listdir(directory):
-    if filename.endswith(".yaml") or filename.endswith(".yml"):
-        with open(os.path.join(directory, filename), 'r') as file:
-            data = yaml.safe_load(file)
-            combined_data.append(data)
+# We only support .YAML extensions
+for filepath in glob("**/*.yaml", recursive=True):
+    if ".github" in filepath:
+        continue
+    with open(filepath, "r") as file:
+        data = yaml.safe_load(file)
+        combined_data.append(data)
 
-combined_data.sort(key=lambda x: x.get('name', ''))
+combined_data.sort(key=lambda x: x.get("name", ""))
 
-with open(output_file, 'w') as outfile:
+with open(output_file, "w") as outfile:
     json.dump(combined_data, outfile)
