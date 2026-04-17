@@ -1,6 +1,6 @@
 name: nuzi-ownersmark
 alias: Crp Car Alarm
-dependencies: ['addonlibrary']
+dependencies: ['nuzi-core']
 description: Owner's Mark tracker with warning overlays for your tracked vehicle.
 keywords:
   - ownersmark
