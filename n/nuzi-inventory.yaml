@@ -1,6 +1,6 @@
 name: nuzi-inventory
 alias: Nuzi Inventory
-dependencies: ['addonlibrary']
+dependencies: ['nuzi-core']
 description: Search bag, bank, alt, and tracked items across your roster.
 keywords:
   - inventory

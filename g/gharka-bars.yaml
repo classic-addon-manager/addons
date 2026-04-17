@@ -1,6 +1,6 @@
 name: gharka-bars
 alias: Gharka Bars
-dependencies: ['addonlibrary']
+dependencies: ['nuzi-core']
 description: Overhead raid bars with role colors and layout controls.
 keywords:
   - raid

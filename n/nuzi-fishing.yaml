@@ -1,6 +1,6 @@
 name: nuzi-fishing
 alias: Nuzi Fishing
-dependencies: ['addonlibrary']
+dependencies: ['nuzi-core']
 description: Sport fishing coach with prompts, timers, and catch tracking.
 keywords:
   - fishing
