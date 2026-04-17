@@ -1,6 +1,6 @@
 name: nuzi-trade
 alias: Nuzi Trade
-dependencies: ['nuzi-core']
+dependencies: ['addonlibrary']
 description: Trade pack price browser with route filtering and live percent input.
 keywords:
   - trade

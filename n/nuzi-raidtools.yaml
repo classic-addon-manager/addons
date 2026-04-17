@@ -1,6 +1,6 @@
 name: nuzi-raidtools
 alias: Nuzi Raidtools
-dependencies: ['nuzi-core']
+dependencies: ['addonlibrary']
 description: Raid manager tools with auto-invite, whitelist management, and streamlined raid info.
 keywords:
   - raid
