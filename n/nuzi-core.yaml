@@ -1,0 +1,13 @@
+name: nuzi-core
+alias: Nuzi Core
+description: Shared runtime library for addons. Installs as a dependency and does not provide a standalone UI.
+keywords:
+  - runtime
+  - library
+  - utility
+  - framework
+  - ui
+author: Nuzi
+repo: Nuziatella/nuzi-core
+branch: main
+tags: ["Utility", "API"]

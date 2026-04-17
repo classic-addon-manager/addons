@@ -1,6 +1,6 @@
 name: nuzi-ui
 alias: Nuzi UI
-dependencies: ['addonlibrary']
+dependencies: ['nuzi-core']
 description: Frame styling, aura control, and overhead plate customization.
 keywords:
   - ui
