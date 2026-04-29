@@ -1,0 +1,18 @@
+name: CombatLogPro
+alias: Combat Log Pro
+description: A detailed, customizable combat log featuring live damage and heal tracking, session history, debuff scanning, and fight summaries with mitigation breakdowns.
+author: Cydaphex
+repo: Cydaphex/CombatLogPro
+branch: main
+tags: ['combat', 'utility', 'pvp']
+keywords:
+  - combat
+  - damage
+  - healing
+  - log
+  - dps
+  - mitigation
+  - debuff
+  - session
+  - history
+  - tracking
