@@ -1,0 +1,16 @@
+name: tax_tracker
+alias: Land Barons - Arise (tax_tracker)
+description: Track land tax payment countdowns, manage farm plots, monitor loans, and get reminders before taxes are due. Built for land barons in ArcheAge Classic.
+author: CraySone
+repo: CraySone/tax_tracker
+branch: main
+tags: ['land', 'tax', 'farming', 'utility']
+keywords:
+  - land
+  - tax
+  - farm
+  - property
+  - reminder
+  - timer
+  - housing
+  - loans
