@@ -4,7 +4,7 @@ description: Track land tax payment countdowns, manage farm plots, monitor loans
 author: CraySone
 repo: CraySone/tax_tracker
 branch: main
-tags: ['land', 'tax', 'farming', 'reminder', 'tracker', 'utility']
+tags: ['land', 'tax', 'farming', 'utility']
 keywords:
   - land
   - tax
