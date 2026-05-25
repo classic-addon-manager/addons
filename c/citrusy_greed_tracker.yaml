@@ -1,0 +1,16 @@
+name: citrusy_greed_tracker
+alias: Kapi's Daily Devotion
+description: Tracks the Citrusy Greed daily across characters, with Kapi's Koin totals and logout reminders.
+author: CraySone
+repo: CraySone/citrusy_greed_tracker
+branch: main
+tags: ['daily', 'quest', 'tracker', 'utility']
+keywords:
+  - daily
+  - quest
+  - tracker
+  - citrusy
+  - greed
+  - kapi
+  - koin
+  - reminder
