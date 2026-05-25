@@ -1,10 +1,13 @@
 name: nuzi-ui
 alias: Nuzi UI
 dependencies: ['nuzi-core']
-description: Frame styling, aura control, and overhead plate customization.
+description: Frame styling, cast bar customization, mount/glider timers, aura control, and overhead plate customization.
 keywords:
   - ui
   - frames
+  - castbar
+  - mount
+  - glider
   - auras
   - plates
   - styling

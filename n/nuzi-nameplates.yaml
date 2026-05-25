@@ -1,0 +1,14 @@
+name: nuzi-nameplates
+alias: Nuzi Nameplates
+dependencies: ['nuzi-core']
+description: Overhead raid nameplates with role colors and layout controls.
+keywords:
+  - raid
+  - nameplates
+  - overhead
+  - health
+  - role
+author: Nuzi
+repo: Nuziatella/nuzi-nameplates
+branch: main
+tags: ["Utility", "Raid", "UI"]
