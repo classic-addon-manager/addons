@@ -52,7 +52,12 @@ jobs:
           echo "Checking out files from PR head: $files"
           git checkout pr-head -- $files
 
+      - name: Skip when no addon YAML files changed
+        if: ${{ steps.changed-files.outputs.files == '' }}
+        run: echo "No addon YAML files changed; skipping addon validation."
+
       - name: Validate changes
+        if: ${{ steps.changed-files.outputs.files != '' }}
         id: validate
         shell: bash
         run: |

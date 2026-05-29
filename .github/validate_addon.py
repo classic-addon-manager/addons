@@ -6,6 +6,24 @@ import requests
 
 from typing import List, Dict, Any, Optional
 
+APPROVED_TAGS = {
+    'UI',
+    'Raid',
+    'Combat',
+    'PvP',
+    'PvE',
+    'Economy',
+    'QoL',
+    'Fishing',
+    'Map',
+    'Chat',
+    'Inventory',
+    'Automation',
+    'Social',
+    'Library',
+    'Other',
+}
+
 def validate_addon(addon: Dict[str, Any]) -> List[str]:
     """
     Validates a single addon entry and returns a list of validation errors.
@@ -71,22 +89,30 @@ def validate_addon(addon: Dict[str, Any]) -> List[str]:
             else:
                 errors.append(f"Failed to fetch releases for '{repo_name}'. Status code: {response.status_code}")
         except requests.exceptions.RequestException as e:
-            errors.append(f"Error checking GitHub releases for '{repo_name}': {e}")    # Tags/categories validation (max 4)
+            errors.append(f"Error checking GitHub releases for '{repo_name}': {e}")
+
+    # Tags/categories validation
     if 'tags' in addon:
         if not isinstance(addon['tags'], list):
             if isinstance(addon['tags'], bool):
                 errors.append("Tags field must be a list, not a boolean")
             else:
                 errors.append(f"Tags field must be a list, got {type(addon['tags']).__name__}")
-        elif len(addon['tags']) > 4:
-            errors.append(f"Too many categories/tags: {len(addon['tags'])} (maximum is 4)")
-        elif not addon['tags']:  # Check if tags list is empty
+        elif not addon['tags']:
             errors.append("Tags list cannot be empty")
         else:
-            # Validate each tag is a string
+            if len(addon['tags']) > 3:
+                errors.append(f"Too many tags: {len(addon['tags'])} (maximum is 3)")
+
             for i, tag in enumerate(addon['tags']):
                 if not isinstance(tag, str):
                     errors.append(f"Tag at position {i+1} must be a string, got {type(tag).__name__}")
+                elif tag not in APPROVED_TAGS:
+                    allowed_tags = ', '.join(sorted(APPROVED_TAGS))
+                    errors.append(
+                        f"Tag at position {i+1} '{tag}' is invalid. "
+                        f"Allowed tags are: {allowed_tags}"
+                    )
     
     # Keywords validation
     if 'keywords' in addon:
