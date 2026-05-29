@@ -85,7 +85,7 @@ dependencies: ['example-plugin']
 
 `branch` is the github branch that is considered the main branch of your repository. By default this is 'main' unless you opted for a different name while creating your repository.
 
-`tags` is a string array determining ways to indicate what your addon is about to the end user as well as being possible to filter on. Ensure you surround your tags with single quotes `'`
+`tags` is a string array determining ways to indicate what your addon is about to the end user as well as being possible to filter on. Tags must be chosen from the [approved category list](#approved-tag-categories) and are **case-sensitive** — match the casing exactly as shown.
 
 `kofi` is your username on [ko-fi.com](https://ko-fi.com), ko-fi is a service that allows users to support you monetarily as a creator. If you add a ko-fi username your addon will show a "support author" section.
 
@@ -103,6 +103,28 @@ keywords:
   - naval
   - pve
 ```
+
+### Approved tag categories
+
+The `tags` field in your addon declaration must only contain values from the list below. These categories ensure consistent filtering and browsing in the addon manager.
+
+| Tag | Description |
+|-----|-------------|
+| **UI** | Visual and interface customizations — frames, bars, fonts, colors, styling |
+| **Raid** | Raid and group management — invites, roles, sorting, frames, rosters |
+| **Combat** | Combat-related features — DPS/HPS meters, logs, procs, buff/debuff tracking, combat text |
+| **PvP** | Player-vs-player focused — target defense, crime alerts, player counters |
+| **PvE** | Player-vs-environment focused — dungeons, boss tracking, PvE helpers |
+| **Economy** | Gold, trade packs, taxes, income, gambling, loan tracking |
+| **QoL** | General quality of life improvements — timers, gear swap, portals, reminders |
+| **Fishing** | Fishing-specific addons |
+| **Map** | Map enhancements — waypoints, navigation, sextant, treasure maps |
+| **Chat** | Chat enhancements — translation, emotes, communication tools |
+| **Inventory** | Inventory, bank, and bag management — item search, tracking |
+| **Automation** | Automated actions — auto-role, auto-swap, auto-invite, auto-fill |
+| **Social** | Social interactions — friends, notes, player annotations |
+| **Library** | Dependency libraries — no standalone UI, used by other addons |
+| **Other** | Novelty, minigames, tutorials, and hardware integrations |
 
 #### Generate an addon YAML file from a form
 You can easily generate a YAML file by going to the following URL and entering the data as needed. It's important to still understand what each field does but this tool is designed to assist you in creating the file.
