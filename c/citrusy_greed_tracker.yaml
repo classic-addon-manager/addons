@@ -4,7 +4,7 @@ description: Tracks the Citrusy Greed daily across characters, with Kapi's Koin 
 author: CraySone
 repo: CraySone/citrusy_greed_tracker
 branch: main
-tags: ['daily', 'quest', 'tracker', 'utility']
+tags: ["QoL"]
 keywords:
   - daily
   - quest

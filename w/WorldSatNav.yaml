@@ -4,10 +4,7 @@ description: Because mapping while having to think sucks
 author: Madpeter
 repo: Madpeterz/WorldSatNav
 branch: main
-tags:
-  - Map
-  - UI
-  - Other
+tags: ["Map", "Navigation", "QoL"]
 kofi: madpeter
 keywords:
   - 'map'

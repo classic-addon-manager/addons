@@ -4,7 +4,7 @@ description: A detailed, customizable combat log featuring live damage and heal 
 author: Cydaphex
 repo: Cydaphex/CombatLogPro
 branch: main
-tags: ['combat', 'utility', 'pvp']
+tags: ["Combat", "UI"]
 kofi: cydaphex
 keywords:
   - combat
