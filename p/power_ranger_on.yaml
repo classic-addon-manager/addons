@@ -1,0 +1,18 @@
+name: power_ranger_on
+alias: Power Ranger ON
+description: Compact PvP overlay for target intel, defenses, gearscore, class, ownership info, and self-cooldown tracking.
+author: CraySone
+repo: CraySone/power_ranger_on
+branch: main
+tags: ['PvP', 'QoL', 'UI']
+keywords:
+  - pvp
+  - combat
+  - overlay
+  - target
+  - intel
+  - gearscore
+  - defense
+  - cooldown
+  - glider
+  - mount
