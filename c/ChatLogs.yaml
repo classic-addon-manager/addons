@@ -4,7 +4,7 @@ description: Logs whispers and public chat channels with on-screen alerts and a 
 author: Cydaphex
 repo: Cydaphex/ChatLogs
 branch: main
-tags: ["Chat", "UI", "QoL", "Social"]
+tags: ["Chat", "QoL", "Social"]
 kofi: cydaphex
 keywords:
   - chat
