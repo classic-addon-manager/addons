@@ -1,0 +1,21 @@
+name: ChatLogs
+alias: Chat Logs
+description: Logs whispers and public chat channels with on-screen alerts and a persistent, searchable, tabbed history window. Item links are translated to readable names.
+author: Cydaphex
+repo: Cydaphex/ChatLogs
+branch: main
+tags: ["Chat", "QoL", "Social"]
+kofi: cydaphex
+keywords:
+  - chat
+  - whisper
+  - log
+  - history
+  - channels
+  - guild
+  - faction
+  - nation
+  - notifications
+  - messages
+  - search
+  - export
