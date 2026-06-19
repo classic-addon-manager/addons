@@ -1,0 +1,17 @@
+name: AACstats
+alias: AACstats.tech
+description: Prints logs to parse inside the AACstats.tech platform.
+author: WasbeerOTB
+repo: milanvlmvl-cmd/AACstats.tech-addon
+branch: main
+tags:
+  - 'Raid'
+  - 'Combat'
+  - 'Other'
+keywords:
+  - AACstats
+  - AACstats.tech
+  - stats
+  - parse
+  - log
+  - logs
