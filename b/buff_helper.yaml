@@ -1,0 +1,18 @@
+name: buff_helper
+alias: Buff Helper
+description: Provides quick access to buff consumables with a favorites bar, categorized buff list, bag highlighting, and low Hereafter Stone warning.
+author: CraySone
+repo: CraySone/buff_helper
+branch: main
+tags: ['QoL', 'Combat', 'Inventory']
+keywords:
+  - buff
+  - buffs
+  - consumables
+  - food
+  - scrolls
+  - quickbar
+  - favorites
+  - inventory
+  - hereafter
+  - helper
