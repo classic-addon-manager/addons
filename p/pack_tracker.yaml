@@ -4,7 +4,7 @@ description: Tracks specialty pack demand percentages across routes, with favori
 author: CraySone
 repo: CraySone/pack_tracker
 branch: main
-tags: ['economy', 'trade-packs', 'tracker']
+tags: ['Economy', 'QoL', 'UI']
 keywords:
   - packs
   - trade
