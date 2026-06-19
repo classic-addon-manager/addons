@@ -12,3 +12,4 @@ author: Delarme
 repo: Draygo-aac/thiccbars
 branch: main
 tags: ["UI", "Raid"]
+dependencies: ['addonlibrary']
