@@ -1,0 +1,11 @@
+name: Elu_Tracker
+alias: Elu Tracker
+description: Commerce & Fishing tools and etc.
+keywords:
+  - tracker
+  - fishing
+  - auction
+author: Eludelu
+repo: GustavoCampos1999/EluTracker
+branch: main
+tags: ["Economy", "QoL"]
