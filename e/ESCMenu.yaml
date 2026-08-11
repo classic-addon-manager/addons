@@ -1,0 +1,15 @@
+name: ESCMenu
+alias: ESCMenu
+description: Rebuilds the ESC menu as retail's category grid, and gives addons a row in it.
+keywords:
+  - esc
+  - menu
+  - retail
+  - ui
+  - interface
+  - settings
+author: Dehling
+repo: DelmonDev/ESCMenu
+branch: main
+kofi: delmon
+tags: ["UI", "QoL"]
