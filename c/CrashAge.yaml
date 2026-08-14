@@ -1,0 +1,12 @@
+name: CrashAge
+alias: Crash Age
+description: Lightweight memory tracker and crash warning system.
+author: Mike
+repo: MikeTheShadow/CrashAge
+branch: main
+tags:
+  - QoL
+  - UI
+keywords:
+  - tracker
+  - crash
