@@ -1,0 +1,20 @@
+name: AddonUILib
+alias: AddonUILib
+description: Shared UI library for addon developers. Labels, buttons, panels, windows, lists, sliders and icons in one consistent style, with a per-addon accent colour.
+author: CraySone
+repo: CraySone/AddonUILib
+branch: master
+tags:
+  - 'UI'
+  - 'Library'
+kofi: craysone
+keywords:
+  - ui
+  - library
+  - widgets
+  - buttons
+  - panels
+  - windows
+  - slider
+  - theme
+  - styling
