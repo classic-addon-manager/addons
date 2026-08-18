@@ -5,6 +5,8 @@ author: CraySone
 repo: CraySone/power_ranger_on
 branch: main
 tags: ['PvP', 'QoL', 'UI']
+dependencies: ['AddonUILib']
+kofi: craysone
 keywords:
   - pvp
   - combat
