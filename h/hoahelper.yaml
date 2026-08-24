@@ -11,3 +11,4 @@ author: Delarme
 repo: Draygo-aac/aac-hoahelper
 branch: main
 tags: ["PvE"]
+dependencies: ['addonlibrary']
