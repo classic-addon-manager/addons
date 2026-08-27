@@ -1,0 +1,18 @@
+name: norrina_craft_tracker
+alias: Norrina-Craft Tracker
+description: Tracks materials for multiple crafting projects and compares the required quantities with the character's current inventory.
+author: Norrina
+repo: r3d3r1c/norrina-craft-tracker
+branch: main
+tags:
+  - QoL
+  - Inventory
+  - Economy
+keywords:
+  - crafting
+  - materials
+  - tracker
+  - inventory
+  - projects
+  - recipes
+
