@@ -1,4 +1,4 @@
-name: norrina_craft_tracker
+name: norrina_hub.yaml
 alias: Norrina-Hub
 description: A lightweight ArcheAge Classic utility hub with crafting, farming, fishing, raid, economy, and quality-of-life tools.
 author: Norrina
@@ -9,7 +9,7 @@ tags:
   - Inventory
   - Economy
 keywords:
-  - crafting
+  - craftingR
   - materials
   - tracker
   - inventory
