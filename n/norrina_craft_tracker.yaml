@@ -1,6 +1,6 @@
 name: norrina_craft_tracker
-alias: Norrina-Craft Tracker
-description: Tracks materials for multiple crafting projects and compares the required quantities with the character's current inventory.
+alias: Norrina-Hub
+description: A lightweight ArcheAge Classic utility hub with crafting, farming, fishing, raid, economy, and quality-of-life tools.
 author: Norrina
 repo: r3d3r1c/norrina-craft-tracker
 branch: main
