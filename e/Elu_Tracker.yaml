@@ -1,11 +1,12 @@
 name: Elu_Tracker
 alias: Elu Tracker
-description: Commerce & Fishing tools and etc.
+description: Commerce, Fishing, AutoRaid & tools.
 keywords:
-  - tracker
+  - packs
+  - commerce
   - fishing
-  - auction
+  - raid
 author: Eludelu
 repo: GustavoCampos1999/EluTracker
 branch: main
-tags: ["Economy", "QoL"]
+tags: ["Economy", "Fishing", "Raid"]
