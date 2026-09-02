@@ -1,0 +1,16 @@
+name: SimpleCombatLog
+alias: Simple Combat Log
+description: Combat log lines printed straight into the game chat.
+keywords:
+  - combat
+  - log
+  - damage
+  - chat
+  - crit
+  - spell
+  - threshold
+author: Pinkl
+kofi: pinklapb
+repo: Pinkl123/SimpleCombatLog
+branch: master
+tags: ["Combat", "Chat"]
