@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://aa-classic.com">
-    <img src="https://aa-classic.com/_ipx/h_45&f_webp/img/logo.png" alt="AAC Logo">
+    <img src="https://aa-classic.com/img/logo.png" alt="AAC Logo">
   </a>
 </p>
 
