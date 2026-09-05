@@ -1,0 +1,17 @@
+name: "Test"
+alias: "Test"
+dependencies:
+  - "AddonUILib"
+description: "Testing something new."
+author: "Sami"
+repo: "classic-addon-manager/example-plugin"
+branch: "master"
+tags:
+  - "QoL"
+  - "Raid"
+kofi: "gaijindev"
+keywords:
+  - "Test"
+  - "Example"
+  - "Plugin"
+  - "Sami"
