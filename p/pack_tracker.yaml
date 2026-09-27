@@ -3,7 +3,7 @@ alias: Pack Tracker
 description: Tracks specialty pack demand percentages across routes, with favorites, alerts, and persistent route data.
 author: CraySone
 repo: CraySone/pack_tracker
-branch: main
+branch: master
 tags: ['Economy', 'QoL', 'UI']
 keywords:
   - packs

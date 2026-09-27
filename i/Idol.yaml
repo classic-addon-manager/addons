@@ -3,7 +3,7 @@ alias: Idol
 description: Tracks important buffs, songcraft effects, item buffs, EHP, and related combat timers.
 author: CraySone/Plushie
 repo: CraySone/Idol
-branch: main
+branch: master
 tags: ['Combat', 'QoL', 'UI']
 keywords:
   - idol
